@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    Stack ordering
+    <title>Stack Ordering </title>
+    <style>
+        #layer1 {
+            border: solid thick black;
+            background-color: brown;
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            z-index: 0;
+        }
+
+        #layer2 {
+            border: solid thick black;
+            background-color: rgb(71, 165, 42);
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 150px;
+            left: 250px;
+            z-index: 0;
+        }
+
+        #layer3 {
+            border: solid thick black;
+            background-color: rgb(108, 42, 165);
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var topLayer = "layer3";
+
+        function mover(toTop) {
+            document.getElementById(topLayer).style.zIndex = "0";
+            document.getElementById(toTop).style.zIndex = "1";
+            topLayer = toTop;
+        }
+    </script>
+
+    <p id=layer1 onmouseover="mover('layer1')"> This is the Last layer <br> Hello everyone</p>
+    <p id=layer2 onmouseover="mover('layer2')"> This is the Middle layer <br> Hello everyone</p>
+    <p id=layer3 onmouseover="mover('layer3')"> This is the first Layer <br> Hello everyone</p>
+</body>
+
+</html>
